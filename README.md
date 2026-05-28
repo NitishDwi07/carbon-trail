@@ -2,7 +2,7 @@
 
 Django REST + React app that ingests emissions data from SAP, utility portals, and corporate travel platforms, normalises it, and surfaces a review dashboard for analysts.
 
-**Demo:** analyst / password123
+**Demo credentials:** `analyst` / `password123`
 
 ---
 
@@ -14,25 +14,54 @@ Django REST + React app that ingests emissions data from SAP, utility portals, a
 - Review dashboard: filter by scope, status, suspicious; approve / flag / reject rows
 - Audit trail on every record
 
+---
+
 ## Local Setup
 
-### Backend (Django)
+### Prerequisites
+- Python 3.10+
+- Node.js 18+
+- PostgreSQL
+
+### 1. Create the database
+
+```bash
+psql -U postgres
+CREATE DATABASE breathe_esg;
+\q
+```
+
+### 2. Backend
 
 ```bash
 cd backend
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/Scripts/activate   # Mac/Linux: source venv/bin/activate
 pip install -r requirements.txt
+```
 
-# Create a PostgreSQL database called breathe_esg
-# Update settings.py DB config if needed
+Create a `.env` file inside `backend/`:
 
+```
+SECRET_KEY=django-insecure-dev-key-change-in-prod
+DEBUG=True
+DB_NAME=breathe_esg
+DB_USER=postgres
+DB_PASSWORD=your_postgres_password
+DB_HOST=localhost
+DB_PORT=5432
+```
+
+Then run:
+
+```bash
+python manage.py makemigrations ingestion accounts
 python manage.py migrate
-python manage.py seed_demo  # creates analyst user + sample data
+python manage.py seed_demo
 python manage.py runserver
 ```
 
-### Frontend (React)
+### 3. Frontend (new terminal)
 
 ```bash
 cd frontend
@@ -40,24 +69,15 @@ npm install
 npm run dev
 ```
 
-App runs at http://localhost:5173. Backend at http://localhost:8000.
-
----
-
-## Deployment (Render)
-
-1. Push to GitHub
-2. Go to render.com → New → Blueprint
-3. Point at this repo, select `render.yaml`
-4. Render will create: PostgreSQL DB, Django backend, React static site
+App → **http://localhost:5173** | API → **http://localhost:8000**
 
 ---
 
 ## Sample Data Files
 
-Three sample CSVs are available from the Upload page ("sample CSV" link). You can also download them from `docs/sample_data/`:
+Three sample CSVs are available from the Upload page ("sample CSV" link). Also in `docs/sample_data/`:
 - `sample_sap.csv` — SAP MB51 fuel movements
-- `sample_utility.csv` — utility portal electricity export  
+- `sample_utility.csv` — utility portal electricity export
 - `sample_travel.csv` — Concur travel extract
 
 ---
@@ -87,10 +107,9 @@ docs/
 
 ---
 
-## Grading notes
+## Docs
 
-- **Data model:** `MODEL.md` covers multi-tenancy, Scope 1/2/3, source traceability, unit normalisation, audit trail
-- **Source research:** `SOURCES.md` explains what each format actually looks like in the wild
-- **Decisions:** `DECISIONS.md` covers every non-obvious choice
-- **Tradeoffs:** `TRADEOFFS.md` covers 3 deliberate omissions with reasoning
-- **UX:** Analyst can filter, review, and action records without knowing anything about the underlying data model
+- **`MODEL.md`** — multi-tenancy, Scope 1/2/3, source traceability, unit normalisation, audit trail
+- **`DECISIONS.md`** — every non-obvious choice resolved with reasoning
+- **`TRADEOFFS.md`** — 3 deliberate omissions and why
+- **`SOURCES.md`** — real-world format research for each source type
