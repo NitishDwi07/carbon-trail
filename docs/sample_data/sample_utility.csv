@@ -1,0 +1,10 @@
+Meter ID,Facility,Period Start,Period End,Units Consumed,Unit,Tariff,Bill Amount,Currency
+MTR-1001,Mumbai Plant,01/01/2024,31/01/2024,185000,kWh,HT Industrial,1295000,INR
+MTR-1001,Mumbai Plant,01/02/2024,29/02/2024,178000,kWh,HT Industrial,1246000,INR
+MTR-1001,Mumbai Plant,01/03/2024,31/03/2024,192000,kWh,HT Industrial,1344000,INR
+DLW-2002,Delhi Warehouse,01/01/2024,31/01/2024,42000,kWh,LT Commercial,315000,INR
+DLW-2002,Delhi Warehouse,01/02/2024,29/02/2024,39500,kWh,LT Commercial,296250,INR
+DLW-2002,Delhi Warehouse,01/03/2024,31/03/2024,44000,kWh,LT Commercial,330000,INR
+CHN-3003,Chennai Facility,01/01/2024,31/01/2024,98000,kWh,HT Industrial,686000,INR
+CHN-3003,Chennai Facility,01/02/2024,29/02/2024,95000,kWh,HT Industrial,665000,INR
+PNQ-4004,Pune Office,05/01/2024,04/02/2024,21000,kWh,LT Commercial,157500,INR

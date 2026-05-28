@@ -1,0 +1,15 @@
+Trip ID,Travel Date,Employee,Category,Origin,Destination,Distance,Distance Unit,Cabin,Nights,Amount,Currency
+TRP-001,2024-01-10,Ananya Sharma,Air,BOM,DEL,1148,km,Economy,,4500,INR
+TRP-002,2024-01-15,Rohan Mehta,Air,DEL,LHR,6730,km,Business,,85000,INR
+TRP-003,2024-01-20,Rohan Mehta,Hotel,,London,,,, 2,18000,INR
+TRP-004,2024-02-03,Priya Nair,Air,BOM,SIN,4358,km,Economy,,32000,INR
+TRP-005,2024-02-05,Priya Nair,Hotel,,Singapore,,,,3,15000,INR
+TRP-006,2024-02-12,Amit Kumar,Taxi,Mumbai,Airport,,,,,650,INR
+TRP-007,2024-03-01,Sneha Patel,Air,BOM,DEL,1148,km,Economy,,4200,INR
+TRP-008,2024-03-08,Vikram Singh,Air,DEL,JFK,11753,km,Business,,120000,INR
+TRP-009,2024-03-10,Vikram Singh,Hotel,,New York,,,,4,45000,INR
+TRP-010,2024-03-18,Kavya Reddy,Train,Mumbai,Pune,148,km,,,1200,INR
+TRP-011,2024-04-05,Ananya Sharma,Air,BOM,DXB,1931,km,Economy,,18000,INR
+TRP-012,2024-04-07,Ananya Sharma,Hotel,,Dubai,,,,2,12000,INR
+TRP-013,2024-05-14,Rohan Mehta,Car Rental,Mumbai,Pune,148,km,,,3500,INR
+TRP-014,2024-05-22,Priya Nair,Air,DEL,BLR,1732,km,Economy,,5800,INR
