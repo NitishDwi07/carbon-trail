@@ -4,6 +4,8 @@ Django REST + React app that ingests emissions data from SAP, utility portals, a
 
 **Demo credentials:** `analyst` / `password123`
 
+**Demo Link:**  https://breathe-esg-frontend-p3g2.onrender.com
+
 ---
 
 ## What it does
